@@ -1,0 +1,10 @@
+{
+    "name": "AssistsX Agent Control",
+    "versionName": "0.1.47",
+    "versionCode": 110,
+    "description": "AssistsX Agent Control",
+    "packageName": "com.assistsx.agent.control",
+    "index": "index.html",
+    "indexInOverlay": false,
+    "icon": "icon.png"
+}
