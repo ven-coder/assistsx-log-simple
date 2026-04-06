@@ -6,5 +6,6 @@
     "packageName": "com.assistsx.log.example",
     "index": "index.html",
     "indexInOverlay": false,
-    "icon": "favicon.svg"
+    "icon": "image.png",
+    "sourceUrl": "https://github.com/assistsx/assistsx-log-simple"
 }

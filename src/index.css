@@ -37,6 +37,26 @@ body {
   flex-direction: column;
 }
 
+/* 由 App.vue 在日志路由时切换，覆盖 :root 渐变底 */
+html.log-panel-transparent {
+  background: transparent !important;
+}
+
+html.log-panel-transparent body,
+html.log-panel-transparent #root {
+  background: transparent;
+}
+
+/* 内联示例进入的日志页：整页黑底 */
+html.log-panel-inline {
+  background: #000000 !important;
+}
+
+html.log-panel-inline body,
+html.log-panel-inline #root {
+  background: #000000;
+}
+
 body {
   margin: 0;
 }

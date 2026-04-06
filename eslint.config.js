@@ -1,29 +1,38 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
+import pluginVue from 'eslint-plugin-vue'
+import tseslint from 'typescript-eslint'
+import vueParser from 'vue-eslint-parser'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
   globalIgnores(['dist']),
   {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
+    files: ['vite.config.js'],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: globals.node,
+    },
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueParser,
       parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
+        parser: tseslint.parser,
+        extraFileExtensions: ['.vue'],
       },
     },
+  },
+  {
+    files: ['**/*.{ts,vue}'],
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^[A-Z_]' },
+      ],
     },
   },
 ])
