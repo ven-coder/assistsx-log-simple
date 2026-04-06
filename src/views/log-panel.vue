@@ -51,8 +51,7 @@ import { useRoute } from "vue-router";
 defineOptions({ name: "LogPanelPage" });
 
 /** 与宿主端 uploadLogs / AssistsLogDiagnostics 的 uploadKey 一致 */
-const LOG_UPLOAD_KEY =
-  "ulk_QStW0GReItDPWx1MgpSScElC259Rsmr5N9RtvUtgqZY";
+const LOG_UPLOAD_KEY = "ulk_Y7MnauToi6rS8Ioi5G-HLuIsxQMvGFb45mw1Y91_xi0";
 
 const route = useRoute();
 

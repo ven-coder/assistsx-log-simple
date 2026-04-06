@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+upload_plugin_cli.py
+dist.zip
+__pycache__/
