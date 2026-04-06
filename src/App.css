@@ -238,7 +238,7 @@ button.cta-card {
   border-radius: 12px;
 }
 
-/* 首页底部：源码链接 + 右侧复制 */
+/* 首页底部：「源码：」+ 链接 + 右侧复制 */
 
 .landing-source-footer {
   display: flex;
@@ -250,14 +250,35 @@ button.cta-card {
   border-top: 1px solid var(--border);
 }
 
-.landing-source-link {
-  flex: 0 1 auto;
+.landing-source-main {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0 6px;
+  flex: 1 1 0;
   min-width: 0;
+}
+
+.landing-source-label {
+  flex: 0 0 auto;
   font-size: 0.875rem;
   line-height: 1.45;
   font-weight: 600;
+  color: var(--text-h);
+}
+
+.landing-source-link {
+  flex: 1 1 0;
+  min-width: 0;
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  font-weight: 500;
   color: var(--accent);
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .landing-source-link:hover {

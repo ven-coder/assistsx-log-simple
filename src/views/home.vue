@@ -58,14 +58,18 @@
     </div>
 
     <footer class="landing-source-footer" aria-label="Source code">
-      <a
-        class="landing-source-link"
-        :href="sourceUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View source
-      </a>
+      <div class="landing-source-main">
+        <span class="landing-source-label">源码：</span>
+        <a
+          class="landing-source-link"
+          :href="sourceUrl"
+          :title="sourceUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ sourceUrl }}
+        </a>
+      </div>
       <button
         type="button"
         class="landing-source-copy"
@@ -106,7 +110,7 @@ import { computed, onMounted, ref } from "vue";
 defineOptions({ name: "HomePage" });
 
 /** 与 public/config.json 中 sourceUrl 一致，可被运行时覆盖 */
-const DEFAULT_SOURCE_URL = "https://github.com/assistsx/assistsx-log-simple";
+const DEFAULT_SOURCE_URL = "https://github.com/ven-coder/assistsx-log-simple";
 
 const floatingHint = ref("");
 const sourceUrl = ref(DEFAULT_SOURCE_URL);
